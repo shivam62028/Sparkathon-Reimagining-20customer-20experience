@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Search,
   ShoppingCart,
@@ -10,6 +11,8 @@ import {
   Bell,
   User,
   Settings,
+  Sparkles,
+  TrendingUp,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
