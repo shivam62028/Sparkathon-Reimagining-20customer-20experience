@@ -401,6 +401,20 @@ const Dashboard = () => {
               <Button
                 variant="ghost"
                 className="text-white hover:bg-white/10 p-2"
+                onClick={toggleTheme}
+                title={
+                  isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+                }
+              >
+                {isDarkMode ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-white hover:bg-white/10 p-2"
               >
                 <Heart className="w-5 h-5" />
               </Button>
