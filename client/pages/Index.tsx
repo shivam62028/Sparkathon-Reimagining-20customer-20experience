@@ -369,22 +369,10 @@ const Dashboard = () => {
 
             {/* Right side actions */}
             <div className="flex items-center space-x-4">
-              <Button
+              <ThemeToggle
                 variant="ghost"
                 className="text-white hover:bg-white/10 p-2"
-                onClick={toggleTheme}
-                title={
-                  theme === "dark"
-                    ? "Switch to light mode"
-                    : "Switch to dark mode"
-                }
-              >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
-                ) : (
-                  <Moon className="w-5 h-5" />
-                )}
-              </Button>
+              />
               <Button
                 variant="ghost"
                 className="text-white hover:bg-white/10 p-2"
