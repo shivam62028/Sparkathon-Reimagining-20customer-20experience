@@ -520,6 +520,107 @@ const Dashboard = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Trending Products */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <TrendingUp className="w-5 h-5 mr-2 text-walmart-blue" />
+                  Trending this week
+                </CardTitle>
+                <CardDescription>
+                  Popular items other customers are buying
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                  {[
+                    {
+                      name: "Greek Yogurt",
+                      price: "$4.98",
+                      image:
+                        "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&h=150&fit=crop&crop=center",
+                      badge: "Protein",
+                    },
+                    {
+                      name: "Fresh Spinach",
+                      price: "$2.48",
+                      image:
+                        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=200&h=150&fit=crop&crop=center",
+                      badge: "Organic",
+                    },
+                    {
+                      name: "Almond Butter",
+                      price: "$7.98",
+                      image:
+                        "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=200&h=150&fit=crop&crop=center",
+                      badge: "Keto",
+                    },
+                    {
+                      name: "Blueberries",
+                      price: "$3.98",
+                      image:
+                        "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=200&h=150&fit=crop&crop=center",
+                      badge: "Fresh",
+                    },
+                    {
+                      name: "Olive Oil",
+                      price: "$8.97",
+                      image:
+                        "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=200&h=150&fit=crop&crop=center",
+                      badge: "Premium",
+                    },
+                    {
+                      name: "Quinoa",
+                      price: "$5.98",
+                      image:
+                        "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=150&fit=crop&crop=center",
+                      badge: "Superfood",
+                    },
+                  ].map((product, index) => (
+                    <div
+                      key={index}
+                      className="border rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
+                    >
+                      <div className="relative">
+                        <img
+                          src={product.image}
+                          alt={product.name}
+                          className="w-full h-20 object-cover rounded mb-2"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                            e.currentTarget.nextElementSibling!.style.display =
+                              "flex";
+                          }}
+                        />
+                        <div
+                          className="w-full h-20 bg-gray-200 rounded mb-2 flex items-center justify-center"
+                          style={{ display: "none" }}
+                        >
+                          <ShoppingCart className="w-6 h-6 text-gray-400" />
+                        </div>
+                        <Badge className="absolute top-1 right-1 text-xs bg-walmart-blue text-white">
+                          {product.badge}
+                        </Badge>
+                      </div>
+                      <h4 className="font-medium text-xs mb-1 line-clamp-2">
+                        {product.name}
+                      </h4>
+                      <p className="text-sm font-bold text-walmart-blue mb-2">
+                        {product.price}
+                      </p>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="w-full h-6 text-xs"
+                      >
+                        Add to Cart
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Right Sidebar */}
