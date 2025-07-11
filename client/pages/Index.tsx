@@ -305,16 +305,16 @@ const Dashboard = () => {
     },
     {
       id: 3,
-      name: "Panera Bread",
-      cuisine: "American",
+      name: "Punjabi By Nature",
+      cuisine: "Punjabi",
       rating: 4.3,
       priceRange: "₹₹",
-      distance: "1.2 miles",
-      specialties: ["Soups", "Salads", "Sandwiches"],
-      dietaryOptions: ["Vegetarian", "Dairy-Free"],
+      distance: "1.2 km",
+      specialties: ["Butter Chicken", "Naan", "Lassi"],
+      dietaryOptions: ["Vegetarian", "Dairy-Free Options"],
       estimatedTime: "20-30 mins",
       image:
-        "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&h=150&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=200&h=150&fit=crop&crop=center",
       partnerApp: "Swiggy",
     },
   ];
