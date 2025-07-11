@@ -16,6 +16,10 @@ import {
   Gift,
   Truck,
   DollarSign,
+  ChefHat,
+  Utensils,
+  Timer,
+  Flame,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
