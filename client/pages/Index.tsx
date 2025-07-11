@@ -151,7 +151,8 @@ const Dashboard = () => {
       time: "15 min",
       rating: 4.8,
       missingIngredients: 2,
-      image: "/api/placeholder/160/120",
+      image:
+        "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&h=200&fit=crop&crop=center",
     },
     {
       id: 2,
@@ -159,7 +160,8 @@ const Dashboard = () => {
       time: "5 min",
       rating: 4.6,
       missingIngredients: 1,
-      image: "/api/placeholder/160/120",
+      image:
+        "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=300&h=200&fit=crop&crop=center",
     },
     {
       id: 3,
@@ -167,7 +169,35 @@ const Dashboard = () => {
       time: "20 min",
       rating: 4.7,
       missingIngredients: 3,
-      image: "/api/placeholder/160/120",
+      image:
+        "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 4,
+      name: "Keto Salmon with Asparagus",
+      time: "25 min",
+      rating: 4.9,
+      missingIngredients: 4,
+      image:
+        "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 5,
+      name: "Dairy-Free Chocolate Pudding",
+      time: "10 min",
+      rating: 4.5,
+      missingIngredients: 2,
+      image:
+        "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 6,
+      name: "Keto Zucchini Noodles",
+      time: "12 min",
+      rating: 4.4,
+      missingIngredients: 3,
+      image:
+        "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=300&h=200&fit=crop&crop=center",
     },
   ];
 
