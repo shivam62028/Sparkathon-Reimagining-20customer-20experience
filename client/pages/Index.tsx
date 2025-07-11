@@ -39,7 +39,6 @@ const Dashboard = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
-  const { theme, toggleTheme } = useTheme();
 
   // Mock user data
   const user = {
