@@ -596,7 +596,7 @@ const Dashboard = () => {
             </Card>
 
             {/* Cooked Meal Solutions */}
-            <Card>
+            <Card className="dark:bg-gray-800/50 dark:border-gray-700 dark:backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="flex items-center text-lg">
                   <Utensils className="w-5 h-5 mr-2 text-walmart-blue" />
