@@ -154,9 +154,10 @@ const Dashboard = () => {
   // Walmart-style categories
   const categories = [
     { name: "Grocery", icon: ShoppingCart, color: "text-walmart-blue" },
+    { name: "Ready Meals", icon: Utensils, color: "text-walmart-blue" },
+    { name: "Restaurants", icon: MapPin, color: "text-walmart-blue" },
     { name: "Health", icon: Heart, color: "text-walmart-blue" },
-    { name: "Home", icon: MapPin, color: "text-walmart-blue" },
-    { name: "Electronics", icon: Sparkles, color: "text-walmart-blue" },
+    { name: "Home", icon: Sparkles, color: "text-walmart-blue" },
   ];
 
   const recentRecipes = [
