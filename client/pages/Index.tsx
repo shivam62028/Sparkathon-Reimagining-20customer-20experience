@@ -887,7 +887,7 @@ const Dashboard = () => {
                   {restaurantRecommendations.map((restaurant) => (
                     <div
                       key={restaurant.id}
-                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                      className="border rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:bg-gray-700/60 dark:hover:shadow-xl dark:hover:shadow-walmart-blue/10"
                     >
                       <div className="relative h-24 bg-gray-100">
                         <img
