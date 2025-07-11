@@ -33,7 +33,7 @@ import {
 } from "../components/ui/card";
 import { Badge } from "../components/ui/badge";
 import { Input } from "../components/ui/input";
-import { useTheme } from "../components/ThemeProvider";
+import { ThemeToggle } from "../components/ui/theme-toggle";
 
 const Dashboard = () => {
   const navigate = useNavigate();
