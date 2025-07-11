@@ -26,7 +26,50 @@ import { Badge } from "../components/ui/badge";
 import { Input } from "../components/ui/input";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+  const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
+
+  // Mock search suggestions based on natural language processing
+  const searchSuggestions = [
+    {
+      type: "recipe",
+      text: "Keto chicken dinner recipes",
+      icon: ChefHat,
+      category: "Recipes",
+    },
+    {
+      type: "product",
+      text: "Gluten-free pasta options",
+      icon: ShoppingCart,
+      category: "Products",
+    },
+    {
+      type: "dietary",
+      text: "Low-sugar breakfast ideas",
+      icon: Heart,
+      category: "Health",
+    },
+    {
+      type: "trending",
+      text: "Trending organic produce",
+      icon: TrendingUp,
+      category: "Trending",
+    },
+  ];
+
+  const handleSearch = (query: string) => {
+    if (
+      query.includes("recipe") ||
+      query.includes("dinner") ||
+      query.includes("meal")
+    ) {
+      navigate("/recipes");
+    } else {
+      // Simulate search results
+      console.log("Searching for:", query);
+    }
+  };
 
   // Mock user data
   const user = {
