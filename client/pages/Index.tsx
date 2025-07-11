@@ -1072,7 +1072,7 @@ const Dashboard = () => {
                   ].map((list, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between p-2 border rounded hover:bg-gray-50 cursor-pointer"
+                      className="flex items-center justify-between p-2 border rounded hover:bg-gray-50 cursor-pointer dark:border-gray-600 dark:hover:bg-gray-700/50 transition-colors duration-200"
                     >
                       <div>
                         <h4 className="font-medium text-sm">{list.name}</h4>
