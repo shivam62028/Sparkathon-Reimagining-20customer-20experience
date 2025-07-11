@@ -868,7 +868,7 @@ const Dashboard = () => {
             </Card>
 
             {/* Restaurant Recommendations */}
-            <Card>
+            <Card className="dark:bg-gray-800/50 dark:border-gray-700 dark:backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="flex items-center text-lg">
                   <MapPin className="w-5 h-5 mr-2 text-walmart-blue" />
@@ -1109,7 +1109,7 @@ const Dashboard = () => {
                   <div className="text-center">
                     <p className="text-2xl font-bold text-walmart-blue">₹416</p>
                     <p className="text-xs text-gray-600">
-                      Off orders over ���2,915
+                      Off orders over ₹2,915
                     </p>
                   </div>
                 </div>
