@@ -568,12 +568,113 @@ const Dashboard = () => {
               </CardContent>
             </Card>
 
+            {/* Cooked Meal Solutions */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <Utensils className="w-5 h-5 mr-2 text-walmart-blue" />
+                  Ready-to-eat meals
+                  <Badge className="ml-2 bg-walmart-yellow text-walmart-blue text-xs">
+                    NEW
+                  </Badge>
+                </CardTitle>
+                <CardDescription>
+                  Fresh cooked meals and meal kits ready for pickup or delivery
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  {readyToEatMeals.map((meal) => (
+                    <div
+                      key={meal.id}
+                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                    >
+                      <div className="relative h-32 bg-gray-100">
+                        <img
+                          src={meal.image}
+                          alt={meal.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                            e.currentTarget.nextElementSibling!.style.display =
+                              "flex";
+                          }}
+                        />
+                        <div
+                          className="w-full h-full bg-gray-200 flex items-center justify-center"
+                          style={{ display: "none" }}
+                        >
+                          <Utensils className="w-8 h-8 text-gray-400" />
+                        </div>
+                        <div className="absolute top-2 left-2">
+                          <Badge className="text-xs bg-white/90 text-gray-700">
+                            {meal.readyTime}
+                          </Badge>
+                        </div>
+                        <div className="absolute top-2 right-2">
+                          <Badge className="text-xs bg-walmart-blue text-white">
+                            {meal.calories}
+                          </Badge>
+                        </div>
+                      </div>
+                      <div className="p-3">
+                        <h4 className="font-medium text-sm mb-1 line-clamp-2">
+                          {meal.name}
+                        </h4>
+                        <p className="text-xs text-gray-600 mb-2 line-clamp-2">
+                          {meal.description}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          {meal.badges.slice(0, 2).map((badge, index) => (
+                            <Badge
+                              key={index}
+                              variant="outline"
+                              className="text-xs"
+                            >
+                              {badge}
+                            </Badge>
+                          ))}
+                        </div>
+
+                        <div className="flex items-center justify-between mb-2">
+                          <span className="text-lg font-bold text-walmart-blue">
+                            {meal.price}
+                          </span>
+                          <div className="flex items-center text-xs text-gray-600">
+                            <Star className="w-3 h-3 mr-1 text-yellow-500" />
+                            {meal.rating}
+                          </div>
+                        </div>
+
+                        <Button
+                          size="sm"
+                          className="w-full bg-walmart-blue hover:bg-walmart-blue/90"
+                        >
+                          <ShoppingCart className="w-3 h-3 mr-1" />
+                          {meal.type === "meal-kit" ? "Order Kit" : "Order Now"}
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 text-center">
+                  <Button
+                    variant="outline"
+                    className="border-walmart-blue text-walmart-blue"
+                  >
+                    View All Ready-to-Eat Options
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+
             {/* Recipe Suggestions */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center text-lg">
-                  <Gift className="w-5 h-5 mr-2 text-walmart-blue" />
-                  Meals made easy
+                  <ChefHat className="w-5 h-5 mr-2 text-walmart-blue" />
+                  Cook at home recipes
                 </CardTitle>
                 <CardDescription>
                   Recipes tailored to your{" "}
