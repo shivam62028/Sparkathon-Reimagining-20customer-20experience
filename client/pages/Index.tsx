@@ -42,7 +42,7 @@ const Dashboard = () => {
 
   // Mock user data
   const user = {
-    name: "Sarah Johnson",
+    name: "Shivam Kumar",
     dietaryPreferences: ["Keto", "Dairy-Free"],
     pantryItems: [
       "Chicken breast",
@@ -1077,7 +1077,7 @@ const Dashboard = () => {
                       <div>
                         <h4 className="font-medium text-sm">{list.name}</h4>
                         <p className="text-xs text-gray-600">
-                          {list.items} items • Last: {list.lastItem}
+                          {list.items} items �� Last: {list.lastItem}
                         </p>
                       </div>
                       <Badge variant="outline" className="text-xs">
