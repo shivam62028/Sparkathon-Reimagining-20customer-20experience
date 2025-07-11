@@ -825,7 +825,7 @@ const Dashboard = () => {
                   ].map((product, index) => (
                     <div
                       key={index}
-                      className="border rounded-lg p-3 hover:shadow-md transition-shadow cursor-pointer"
+                      className="border rounded-lg p-3 hover:shadow-md transition-all duration-300 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:bg-gray-700/60 dark:hover:shadow-xl dark:hover:shadow-walmart-blue/10"
                     >
                       <div className="relative">
                         <img
@@ -1109,7 +1109,7 @@ const Dashboard = () => {
                   <div className="text-center">
                     <p className="text-2xl font-bold text-walmart-blue">₹416</p>
                     <p className="text-xs text-gray-600">
-                      Off orders over ₹2,915
+                      Off orders over ���2,915
                     </p>
                   </div>
                 </div>
