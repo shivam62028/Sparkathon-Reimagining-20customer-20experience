@@ -419,6 +419,25 @@ const Dashboard = () => {
               </Button>
             </div>
 
+            <div className="flex flex-wrap gap-2 mt-4 justify-center">
+              <Button variant="outline" size="sm" className="h-8">
+                <Utensils className="w-4 h-4 mr-1" />
+                Ready Meals
+              </Button>
+              <Button variant="outline" size="sm" className="h-8">
+                <ChefHat className="w-4 h-4 mr-1" />
+                Recipe Ideas
+              </Button>
+              <Button variant="outline" size="sm" className="h-8">
+                <MapPin className="w-4 h-4 mr-1" />
+                Restaurants
+              </Button>
+              <Button variant="outline" size="sm" className="h-8">
+                <ShoppingCart className="w-4 h-4 mr-1" />
+                Quick Reorder
+              </Button>
+            </div>
+
             {showSearchSuggestions && searchQuery && (
               <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-b-md shadow-lg z-50">
                 {searchSuggestions
