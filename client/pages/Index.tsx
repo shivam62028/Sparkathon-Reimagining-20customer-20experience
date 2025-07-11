@@ -704,6 +704,52 @@ const Dashboard = () => {
               </CardContent>
             </Card>
 
+            {/* Shopping Lists */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-base">My Shopping Lists</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {[
+                    {
+                      name: "Weekly Groceries",
+                      items: 12,
+                      lastItem: "Organic Milk",
+                    },
+                    {
+                      name: "Keto Meal Prep",
+                      items: 8,
+                      lastItem: "Salmon Fillets",
+                    },
+                    {
+                      name: "Household Items",
+                      items: 5,
+                      lastItem: "Paper Towels",
+                    },
+                  ].map((list, index) => (
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-2 border rounded hover:bg-gray-50 cursor-pointer"
+                    >
+                      <div>
+                        <h4 className="font-medium text-sm">{list.name}</h4>
+                        <p className="text-xs text-gray-600">
+                          {list.items} items • Last: {list.lastItem}
+                        </p>
+                      </div>
+                      <Badge variant="outline" className="text-xs">
+                        {list.items}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+                <Button className="w-full mt-3" variant="outline" size="sm">
+                  + Create New List
+                </Button>
+              </CardContent>
+            </Card>
+
             {/* Special Offers */}
             <Card className="bg-walmart-yellow/10 border-walmart-yellow">
               <CardHeader>
