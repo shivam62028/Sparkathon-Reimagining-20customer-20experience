@@ -39,6 +39,11 @@ export default {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        walmart: {
+          blue: "hsl(var(--walmart-blue))",
+          yellow: "hsl(var(--walmart-yellow))",
+          "light-blue": "hsl(var(--walmart-light-blue))",
+        },
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
