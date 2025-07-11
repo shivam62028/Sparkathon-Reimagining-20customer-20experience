@@ -216,6 +216,108 @@ const Dashboard = () => {
     },
   ];
 
+  // Ready-to-eat meals from Walmart deli/bakery
+  const readyToEatMeals = [
+    {
+      id: 1,
+      name: "Rotisserie Chicken with Mashed Potatoes",
+      description: "AI suggests this based on your keto preferences!",
+      price: "$8.98",
+      readyTime: "Ready now",
+      rating: 4.7,
+      calories: "520 cal",
+      badges: ["Keto-Friendly", "High Protein"],
+      image:
+        "https://images.unsplash.com/photo-1598103442097-8b74394b95c6?w=300&h=200&fit=crop&crop=center",
+      type: "deli",
+    },
+    {
+      id: 2,
+      name: "Grilled Salmon Bowl",
+      description: "Fresh from our deli, perfect for dairy-free diet",
+      price: "$12.98",
+      readyTime: "Ready in 15 mins",
+      rating: 4.8,
+      calories: "410 cal",
+      badges: ["Dairy-Free", "Omega-3"],
+      image:
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=200&fit=crop&crop=center",
+      type: "deli",
+    },
+    {
+      id: 3,
+      name: "Mediterranean Meal Kit",
+      description: "Ready-to-cook kit with pre-prepped ingredients",
+      price: "$15.98",
+      readyTime: "Cook in 20 mins",
+      rating: 4.6,
+      calories: "380 cal",
+      badges: ["Meal Kit", "Mediterranean"],
+      image:
+        "https://images.unsplash.com/photo-1544510985-ec3f96ca5082?w=300&h=200&fit=crop&crop=center",
+      type: "meal-kit",
+    },
+    {
+      id: 4,
+      name: "Keto Caesar Salad",
+      description: "Fresh greens with keto-friendly dressing",
+      price: "$6.98",
+      readyTime: "Ready now",
+      rating: 4.5,
+      calories: "290 cal",
+      badges: ["Keto", "Fresh"],
+      image:
+        "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=300&h=200&fit=crop&crop=center",
+      type: "deli",
+    },
+  ];
+
+  // Restaurant recommendations based on user preferences
+  const restaurantRecommendations = [
+    {
+      id: 1,
+      name: "Olive Garden",
+      cuisine: "Italian",
+      rating: 4.2,
+      priceRange: "$$",
+      distance: "0.8 miles",
+      specialties: ["Pasta", "Breadsticks"],
+      dietaryOptions: ["Vegetarian", "Gluten-Free Options"],
+      estimatedTime: "25-35 mins",
+      image:
+        "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=150&fit=crop&crop=center",
+      partnerApp: "DoorDash",
+    },
+    {
+      id: 2,
+      name: "Chipotle Mexican Grill",
+      cuisine: "Mexican",
+      rating: 4.4,
+      priceRange: "$",
+      distance: "0.5 miles",
+      specialties: ["Bowls", "Burritos"],
+      dietaryOptions: ["Keto", "Dairy-Free", "Vegetarian"],
+      estimatedTime: "15-25 mins",
+      image:
+        "https://images.unsplash.com/photo-1565299507177-b0ac66763828?w=200&h=150&fit=crop&crop=center",
+      partnerApp: "Uber Eats",
+    },
+    {
+      id: 3,
+      name: "Panera Bread",
+      cuisine: "American",
+      rating: 4.3,
+      priceRange: "$$",
+      distance: "1.2 miles",
+      specialties: ["Soups", "Salads", "Sandwiches"],
+      dietaryOptions: ["Vegetarian", "Dairy-Free"],
+      estimatedTime: "20-30 mins",
+      image:
+        "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&h=150&fit=crop&crop=center",
+      partnerApp: "Grubhub",
+    },
+  ];
+
   const handleSearch = (query: string) => {
     if (
       query.includes("recipe") ||
