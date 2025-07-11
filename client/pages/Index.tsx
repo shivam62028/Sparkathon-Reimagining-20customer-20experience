@@ -686,7 +686,7 @@ const Dashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  {user.pantryItems.slice(0, 4).map((item, index) => (
+                  {user.pantryItems.slice(0, 6).map((item, index) => (
                     <div
                       key={index}
                       className="flex items-center justify-between py-1 text-sm"
