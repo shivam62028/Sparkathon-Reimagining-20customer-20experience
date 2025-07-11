@@ -539,7 +539,7 @@ const Dashboard = () => {
                   {smartRecommendations.map((rec) => (
                     <div
                       key={rec.id}
-                      className="border rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
+                      className="border rounded-lg p-4 hover:shadow-md transition-all duration-300 bg-white dark:bg-gray-800/60 dark:border-gray-600 dark:hover:bg-gray-700/60 dark:hover:shadow-xl dark:hover:shadow-blue-500/10"
                     >
                       <div className="flex justify-between items-start mb-3">
                         <Badge className={`text-xs ${rec.badgeColor}`}>
