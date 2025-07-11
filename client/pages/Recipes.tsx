@@ -1,5 +1,5 @@
 import React from "react";
-import { ChefHat, ArrowLeft } from "lucide-react";
+import { ChefHat, ArrowLeft, Sun, Moon } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
   Card,
@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../components/ui/card";
+import { useTheme } from "../components/ThemeProvider";
 
 const Recipes = () => {
   return (
