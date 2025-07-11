@@ -979,7 +979,7 @@ const Dashboard = () => {
           {/* Right Sidebar */}
           <div className="space-y-6">
             {/* Quick Actions */}
-            <Card>
+            <Card className="dark:bg-gray-800/50 dark:border-gray-700 dark:backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-base">Quick actions</CardTitle>
               </CardHeader>
@@ -1109,7 +1109,7 @@ const Dashboard = () => {
                   <div className="text-center">
                     <p className="text-2xl font-bold text-walmart-blue">₹416</p>
                     <p className="text-xs text-gray-600">
-                      Off orders over ₹2,915
+                      Off orders over ��2,915
                     </p>
                   </div>
                 </div>
