@@ -163,57 +163,57 @@ const Dashboard = () => {
   const recentRecipes = [
     {
       id: 1,
-      name: "Keto Chicken Avocado Bowl",
+      name: "Keto Chicken Tandoori Bowl",
       time: "15 min",
       rating: 4.8,
+      missingIngredients: 2,
+      image:
+        "https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 2,
+      name: "Dairy-Free Masala Chai Smoothie",
+      time: "5 min",
+      rating: 4.6,
+      missingIngredients: 1,
+      image:
+        "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 3,
+      name: "Keto Cauliflower Biryani",
+      time: "30 min",
+      rating: 4.7,
+      missingIngredients: 4,
+      image:
+        "https://images.unsplash.com/photo-1563379091339-03246963d51a?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 4,
+      name: "Palak Paneer (Dairy-Free)",
+      time: "25 min",
+      rating: 4.9,
+      missingIngredients: 3,
+      image:
+        "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=300&h=200&fit=crop&crop=center",
+    },
+    {
+      id: 5,
+      name: "Keto Dal Tadka",
+      time: "20 min",
+      rating: 4.5,
       missingIngredients: 2,
       image:
         "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=300&h=200&fit=crop&crop=center",
     },
     {
-      id: 2,
-      name: "Dairy-Free Green Smoothie",
-      time: "5 min",
-      rating: 4.6,
-      missingIngredients: 1,
-      image:
-        "https://images.unsplash.com/photo-1610970881699-44a5587cabec?w=300&h=200&fit=crop&crop=center",
-    },
-    {
-      id: 3,
-      name: "Low-Carb Cauliflower Rice",
-      time: "20 min",
-      rating: 4.7,
-      missingIngredients: 3,
-      image:
-        "https://images.unsplash.com/photo-1585032226651-759b368d7246?w=300&h=200&fit=crop&crop=center",
-    },
-    {
-      id: 4,
-      name: "Keto Salmon with Asparagus",
-      time: "25 min",
-      rating: 4.9,
-      missingIngredients: 4,
-      image:
-        "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=300&h=200&fit=crop&crop=center",
-    },
-    {
-      id: 5,
-      name: "Dairy-Free Chocolate Pudding",
+      id: 6,
+      name: "Coconut Chutney Bowl",
       time: "10 min",
-      rating: 4.5,
+      rating: 4.4,
       missingIngredients: 2,
       image:
-        "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=300&h=200&fit=crop&crop=center",
-    },
-    {
-      id: 6,
-      name: "Keto Zucchini Noodles",
-      time: "12 min",
-      rating: 4.4,
-      missingIngredients: 3,
-      image:
-        "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=300&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=300&h=200&fit=crop&crop=center",
     },
   ];
 
