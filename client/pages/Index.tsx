@@ -287,7 +287,7 @@ const Dashboard = () => {
       estimatedTime: "25-35 mins",
       image:
         "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=200&h=150&fit=crop&crop=center",
-      partnerApp: "DoorDash",
+      partnerApp: "Zomato",
     },
     {
       id: 2,
@@ -315,7 +315,7 @@ const Dashboard = () => {
       estimatedTime: "20-30 mins",
       image:
         "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=200&h=150&fit=crop&crop=center",
-      partnerApp: "Grubhub",
+      partnerApp: "Swiggy",
     },
   ];
 
