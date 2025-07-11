@@ -37,7 +37,18 @@ const Dashboard = () => {
   const user = {
     name: "Sarah Johnson",
     dietaryPreferences: ["Keto", "Dairy-Free"],
-    pantryItems: ["Chicken breast", "Avocado", "Olive oil", "Spinach"],
+    pantryItems: [
+      "Chicken breast",
+      "Avocado",
+      "Olive oil",
+      "Spinach",
+      "Coconut oil",
+      "Almond flour",
+      "Greek yogurt",
+      "Eggs",
+      "Bell peppers",
+      "Cauliflower",
+    ],
     favoriteCategories: ["Organic", "Fresh Produce", "Protein"],
   };
 
