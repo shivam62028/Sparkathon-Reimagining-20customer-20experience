@@ -839,6 +839,114 @@ const Dashboard = () => {
                 </div>
               </CardContent>
             </Card>
+
+            {/* Restaurant Recommendations */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center text-lg">
+                  <MapPin className="w-5 h-5 mr-2 text-walmart-blue" />
+                  Dining out suggestions
+                  <Badge className="ml-2 bg-walmart-yellow text-walmart-blue text-xs">
+                    AI POWERED
+                  </Badge>
+                </CardTitle>
+                <CardDescription>
+                  Restaurants near you that match your{" "}
+                  {user.dietaryPreferences.join(", ").toLowerCase()} preferences
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {restaurantRecommendations.map((restaurant) => (
+                    <div
+                      key={restaurant.id}
+                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                    >
+                      <div className="relative h-24 bg-gray-100">
+                        <img
+                          src={restaurant.image}
+                          alt={restaurant.name}
+                          className="w-full h-full object-cover"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                            e.currentTarget.nextElementSibling!.style.display =
+                              "flex";
+                          }}
+                        />
+                        <div
+                          className="w-full h-full bg-gray-200 flex items-center justify-center"
+                          style={{ display: "none" }}
+                        >
+                          <Utensils className="w-8 h-8 text-gray-400" />
+                        </div>
+                        <div className="absolute top-2 left-2">
+                          <Badge className="text-xs bg-white/90 text-gray-700">
+                            {restaurant.distance}
+                          </Badge>
+                        </div>
+                        <div className="absolute top-2 right-2">
+                          <Badge className="text-xs bg-green-600 text-white">
+                            {restaurant.priceRange}
+                          </Badge>
+                        </div>
+                      </div>
+                      <div className="p-3">
+                        <div className="flex items-center justify-between mb-1">
+                          <h4 className="font-medium text-sm">
+                            {restaurant.name}
+                          </h4>
+                          <div className="flex items-center text-xs text-gray-600">
+                            <Star className="w-3 h-3 mr-1 text-yellow-500" />
+                            {restaurant.rating}
+                          </div>
+                        </div>
+
+                        <p className="text-xs text-gray-600 mb-2">
+                          {restaurant.cuisine} • {restaurant.estimatedTime}
+                        </p>
+
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          {restaurant.specialties
+                            .slice(0, 2)
+                            .map((specialty, index) => (
+                              <Badge
+                                key={index}
+                                variant="outline"
+                                className="text-xs"
+                              >
+                                {specialty}
+                              </Badge>
+                            ))}
+                        </div>
+
+                        <div className="mb-2">
+                          <p className="text-xs text-green-700 font-medium">
+                            ✓ Supports {restaurant.dietaryOptions.join(", ")}
+                          </p>
+                        </div>
+
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          className="w-full border-walmart-blue text-walmart-blue"
+                        >
+                          <Truck className="w-3 h-3 mr-1" />
+                          Order via {restaurant.partnerApp}
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-4 text-center">
+                  <Button
+                    variant="outline"
+                    className="border-walmart-blue text-walmart-blue"
+                  >
+                    Find More Restaurants Near You
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
           </div>
 
           {/* Right Sidebar */}
