@@ -102,7 +102,7 @@ const Dashboard = () => {
       title: "Rollback savings",
       description: "Tide PODS Laundry Detergent, 81 Count",
       price: "₹1,664",
-      originalPrice: "���2,415",
+      originalPrice: "₹2,415",
       badge: "Save ₹751",
       badgeColor: "bg-walmart-yellow text-black",
       image:
@@ -476,7 +476,7 @@ const Dashboard = () => {
       </div>
 
       {/* Categories */}
-      <div className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+      <div className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-center space-x-8 py-4">
             {categories.map((category) => (
