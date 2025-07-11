@@ -5,14 +5,17 @@ import {
   ShoppingCart,
   Heart,
   Clock,
-  Zap,
-  ChefHat,
   MapPin,
   Bell,
   User,
-  Settings,
+  Menu,
   Sparkles,
   TrendingUp,
+  ChevronDown,
+  Star,
+  Gift,
+  Truck,
+  DollarSign,
 } from "lucide-react";
 import { Button } from "../components/ui/button";
 import {
@@ -30,31 +33,105 @@ const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [showSearchSuggestions, setShowSearchSuggestions] = useState(false);
 
+  // Mock user data
+  const user = {
+    name: "Sarah Johnson",
+    dietaryPreferences: ["Keto", "Dairy-Free"],
+    pantryItems: ["Chicken breast", "Avocado", "Olive oil", "Spinach"],
+    favoriteCategories: ["Organic", "Fresh Produce", "Protein"],
+  };
+
   // Mock search suggestions based on natural language processing
   const searchSuggestions = [
     {
       type: "recipe",
       text: "Keto chicken dinner recipes",
-      icon: ChefHat,
       category: "Recipes",
     },
     {
       type: "product",
       text: "Gluten-free pasta options",
-      icon: ShoppingCart,
       category: "Products",
     },
     {
       type: "dietary",
       text: "Low-sugar breakfast ideas",
-      icon: Heart,
       category: "Health",
     },
     {
       type: "trending",
       text: "Trending organic produce",
-      icon: TrendingUp,
       category: "Trending",
+    },
+  ];
+
+  // Walmart-style smart recommendations
+  const smartRecommendations = [
+    {
+      id: 1,
+      type: "running_low",
+      title: "Reorder your usual",
+      description: "Great Value Whole Milk",
+      price: "$3.42",
+      badge: "Low Stock",
+      badgeColor: "bg-red-100 text-red-800",
+      image: "/api/placeholder/80/80",
+    },
+    {
+      id: 2,
+      type: "deal",
+      title: "Rollback savings",
+      description: "Tide PODS Laundry Detergent",
+      price: "$19.97",
+      originalPrice: "$28.97",
+      badge: "Save $9",
+      badgeColor: "bg-walmart-yellow text-black",
+      image: "/api/placeholder/80/80",
+    },
+    {
+      id: 3,
+      type: "personalized",
+      title: "Perfect for keto",
+      description: "Keto-friendly meal bundle",
+      price: "$24.99",
+      badge: "For You",
+      badgeColor: "bg-walmart-blue text-white",
+      image: "/api/placeholder/80/80",
+    },
+  ];
+
+  // Walmart-style categories
+  const categories = [
+    { name: "Grocery", icon: ShoppingCart, color: "text-walmart-blue" },
+    { name: "Health", icon: Heart, color: "text-walmart-blue" },
+    { name: "Home", icon: MapPin, color: "text-walmart-blue" },
+    { name: "Electronics", icon: Sparkles, color: "text-walmart-blue" },
+  ];
+
+  const recentRecipes = [
+    {
+      id: 1,
+      name: "Keto Chicken Avocado Bowl",
+      time: "15 min",
+      rating: 4.8,
+      missingIngredients: 2,
+      image: "/api/placeholder/160/120",
+    },
+    {
+      id: 2,
+      name: "Dairy-Free Green Smoothie",
+      time: "5 min",
+      rating: 4.6,
+      missingIngredients: 1,
+      image: "/api/placeholder/160/120",
+    },
+    {
+      id: 3,
+      name: "Low-Carb Cauliflower Rice",
+      time: "20 min",
+      rating: 4.7,
+      missingIngredients: 3,
+      image: "/api/placeholder/160/120",
     },
   ];
 
@@ -66,250 +143,254 @@ const Dashboard = () => {
     ) {
       navigate("/recipes");
     } else {
-      // Simulate search results
       console.log("Searching for:", query);
     }
   };
 
-  // Mock user data
-  const user = {
-    name: "Sarah Johnson",
-    dietaryPreferences: ["Keto", "Dairy-Free"],
-    pantryItems: ["Chicken breast", "Avocado", "Olive oil", "Spinach"],
-    favoriteCategories: ["Organic", "Fresh Produce", "Protein"],
-  };
-
-  // Mock smart recommendations
-  const smartRecommendations = [
-    {
-      id: 1,
-      type: "running_low",
-      title: "Looks like you're low on milk!",
-      description: "Based on your usual purchasing pattern",
-      product: "Great Value Whole Milk, 1 Gallon",
-      price: "$3.42",
-      image: "/api/placeholder/120/120",
-      urgency: "high",
-    },
-    {
-      id: 2,
-      type: "deal",
-      title: "Your favorite detergent is on sale!",
-      description: "Save 30% on Tide Pods",
-      product: "Tide PODS Laundry Detergent, 81 Count",
-      price: "$19.97",
-      originalPrice: "$28.97",
-      image: "/api/placeholder/120/120",
-      urgency: "medium",
-    },
-    {
-      id: 3,
-      type: "seasonal",
-      title: "Perfect for your keto diet",
-      description: "New arrivals in low-carb section",
-      product: "Keto-friendly meal bundle",
-      price: "$24.99",
-      image: "/api/placeholder/120/120",
-      urgency: "low",
-    },
-  ];
-
-  // Mock recent recipes
-  const recentRecipes = [
-    {
-      id: 1,
-      name: "Keto Chicken Avocado Salad",
-      time: "15 min",
-      difficulty: "Easy",
-      missingIngredients: 2,
-      image: "/api/placeholder/200/120",
-    },
-    {
-      id: 2,
-      name: "Dairy-Free Spinach Smoothie",
-      time: "5 min",
-      difficulty: "Easy",
-      missingIngredients: 1,
-      image: "/api/placeholder/200/120",
-    },
-    {
-      id: 3,
-      name: "Low-Carb Cauliflower Rice Bowl",
-      time: "20 min",
-      difficulty: "Medium",
-      missingIngredients: 3,
-      image: "/api/placeholder/200/120",
-    },
-  ];
-
-  const shoppingLists = [
-    { id: 1, name: "Weekly Groceries", items: 12, updated: "2 hours ago" },
-    { id: 2, name: "Keto Meal Prep", items: 8, updated: "1 day ago" },
-    { id: 3, name: "Household Essentials", items: 5, updated: "3 days ago" },
-  ];
-
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
-      {/* Header */}
-      <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
+    <div className="min-h-screen bg-background">
+      {/* Walmart-style Header */}
+      <header className="bg-walmart-blue text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4">
+            {/* Logo and Navigation */}
+            <div className="flex items-center space-x-6">
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
+                <div className="w-8 h-8 bg-walmart-yellow rounded-full flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-walmart-blue" />
                 </div>
-                <span className="text-xl font-bold text-foreground">
-                  SmartCart
-                </span>
+                <span className="text-xl font-bold">Walmart</span>
               </div>
+
+              <nav className="hidden md:flex items-center space-x-6">
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
+                  <Menu className="w-4 h-4 mr-2" />
+                  Departments
+                  <ChevronDown className="w-4 h-4 ml-1" />
+                </Button>
+                <Button
+                  variant="ghost"
+                  className="text-white hover:bg-white/10"
+                >
+                  Services
+                </Button>
+              </nav>
             </div>
 
+            {/* Right side actions */}
             <div className="flex items-center space-x-4">
-              <Bell className="w-5 h-5 text-muted-foreground hover:text-foreground cursor-pointer" />
-              <div className="flex items-center space-x-2 cursor-pointer">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                  <User className="w-4 h-4 text-primary" />
-                </div>
-                <span className="text-sm font-medium text-foreground">
-                  {user.name}
+              <Button
+                variant="ghost"
+                className="text-white hover:bg-white/10 p-2"
+              >
+                <Heart className="w-5 h-5" />
+              </Button>
+              <Button
+                variant="ghost"
+                className="text-white hover:bg-white/10 p-2"
+              >
+                <Bell className="w-5 h-5" />
+              </Button>
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                <ShoppingCart className="w-5 h-5 mr-2" />
+                <span className="hidden sm:inline">Cart</span>
+              </Button>
+              <Button variant="ghost" className="text-white hover:bg-white/10">
+                <User className="w-5 h-5 mr-2" />
+                <span className="hidden sm:inline">
+                  Hi, {user.name.split(" ")[0]}
                 </span>
-              </div>
+              </Button>
             </div>
           </div>
         </div>
       </header>
 
+      {/* Search Bar Section */}
+      <div className="bg-walmart-light-blue border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="relative max-w-2xl mx-auto">
+            <div className="flex">
+              <div className="relative flex-1">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Input
+                  type="text"
+                  placeholder="Search everything at Walmart online and in store"
+                  value={searchQuery}
+                  onChange={(e) => {
+                    setSearchQuery(e.target.value);
+                    setShowSearchSuggestions(e.target.value.length > 0);
+                  }}
+                  className="pl-10 h-12 border-2 border-gray-200 focus:border-walmart-blue rounded-r-none"
+                />
+              </div>
+              <Button
+                className="bg-walmart-yellow text-walmart-blue hover:bg-walmart-yellow/90 h-12 px-6 rounded-l-none"
+                onClick={() => handleSearch(searchQuery)}
+              >
+                Search
+              </Button>
+            </div>
+
+            {showSearchSuggestions && searchQuery && (
+              <div className="absolute top-full left-0 right-0 bg-white border border-gray-200 rounded-b-md shadow-lg z-50">
+                {searchSuggestions
+                  .filter((s) =>
+                    s.text.toLowerCase().includes(searchQuery.toLowerCase()),
+                  )
+                  .map((suggestion, index) => (
+                    <div
+                      key={index}
+                      className="px-4 py-2 hover:bg-gray-50 cursor-pointer border-b last:border-b-0"
+                      onClick={() => {
+                        setSearchQuery(suggestion.text);
+                        setShowSearchSuggestions(false);
+                        handleSearch(suggestion.text);
+                      }}
+                    >
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm">{suggestion.text}</span>
+                        <Badge variant="outline" className="text-xs">
+                          {suggestion.category}
+                        </Badge>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
+
+      {/* Categories */}
+      <div className="bg-white border-b">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-center space-x-8 py-4">
+            {categories.map((category) => (
+              <Button
+                key={category.name}
+                variant="ghost"
+                className="flex flex-col items-center space-y-1 p-2 h-auto"
+              >
+                <category.icon className={`w-6 h-6 ${category.color}`} />
+                <span className="text-xs text-gray-600">{category.name}</span>
+              </Button>
+            ))}
+          </div>
+        </div>
+      </div>
+
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Welcome Section */}
-        <div className="mb-8">
-          <h1 className="text-3xl font-bold text-foreground mb-2">
-            Welcome back, {user.name.split(" ")[0]}! 👋
-          </h1>
-          <p className="text-muted-foreground">
-            Your personalized shopping assistant is ready to help make your day
-            easier.
-          </p>
+      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Welcome Banner */}
+        <div className="bg-gradient-to-r from-walmart-blue to-blue-600 text-white rounded-lg p-6 mb-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <h1 className="text-2xl font-bold mb-2">
+                Welcome back, {user.name.split(" ")[0]}!
+              </h1>
+              <p className="text-blue-100">
+                Your personalized shopping assistant is ready to help save you
+                time and money.
+              </p>
+            </div>
+            <div className="hidden md:flex items-center space-x-4">
+              <div className="text-center">
+                <Truck className="w-8 h-8 mx-auto mb-1" />
+                <p className="text-xs">Free shipping</p>
+              </div>
+              <div className="text-center">
+                <DollarSign className="w-8 h-8 mx-auto mb-1" />
+                <p className="text-xs">Rollback savings</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Smart Search Bar */}
-        <Card className="mb-8 shadow-sm">
-          <CardContent className="p-6">
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground w-5 h-5" />
-              <Input
-                type="text"
-                placeholder="Try: 'gluten-free dinner ideas for kids' or 'ingredients for chicken tikka masala'"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                className="pl-10 h-12 text-base border-2 focus:border-primary/50"
-              />
-            </div>
-            <div className="flex flex-wrap gap-2 mt-4">
-              <Button variant="outline" size="sm" className="h-8">
-                <ChefHat className="w-4 h-4 mr-1" />
-                Recipe Ideas
-              </Button>
-              <Button variant="outline" size="sm" className="h-8">
-                <MapPin className="w-4 h-4 mr-1" />
-                Store Navigation
-              </Button>
-              <Button variant="outline" size="sm" className="h-8">
-                <ShoppingCart className="w-4 h-4 mr-1" />
-                Quick Reorder
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
           {/* Left Column - Smart Recommendations */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-3 space-y-6">
             {/* Smart Recommendations */}
-            <Card className="shadow-sm">
+            <Card>
               <CardHeader>
                 <CardTitle className="flex items-center text-lg">
-                  <Zap className="w-5 h-5 mr-2 text-primary" />
-                  Smart Recommendations
+                  <Sparkles className="w-5 h-5 mr-2 text-walmart-blue" />
+                  Recommended for you
                 </CardTitle>
                 <CardDescription>
-                  Personalized suggestions based on your shopping patterns and
-                  preferences
+                  Based on your shopping history and preferences
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
-                {smartRecommendations.map((rec) => (
-                  <div
-                    key={rec.id}
-                    className="flex items-center space-x-4 p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-                  >
-                    <div className="w-16 h-16 bg-muted rounded-lg flex items-center justify-center">
-                      <img
-                        src={rec.image}
-                        alt={rec.product}
-                        className="w-12 h-12 object-cover rounded"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none";
-                          e.currentTarget.nextElementSibling!.style.display =
-                            "flex";
-                        }}
-                      />
-                      <div
-                        className="w-12 h-12 bg-primary/10 rounded flex items-center justify-center"
-                        style={{ display: "none" }}
-                      >
-                        <ShoppingCart className="w-6 h-6 text-primary" />
+              <CardContent>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {smartRecommendations.map((rec) => (
+                    <div
+                      key={rec.id}
+                      className="border rounded-lg p-4 hover:shadow-md transition-shadow bg-white"
+                    >
+                      <div className="flex justify-between items-start mb-3">
+                        <Badge className={`text-xs ${rec.badgeColor}`}>
+                          {rec.badge}
+                        </Badge>
                       </div>
-                    </div>
-                    <div className="flex-1">
-                      <div className="flex items-center space-x-2 mb-1">
-                        <h4 className="font-medium text-foreground">
-                          {rec.title}
-                        </h4>
-                        {rec.urgency === "high" && (
-                          <Badge variant="destructive" className="text-xs">
-                            Urgent
-                          </Badge>
-                        )}
-                        {rec.urgency === "medium" && (
-                          <Badge variant="secondary" className="text-xs">
-                            Sale
-                          </Badge>
-                        )}
+
+                      <div className="w-full h-20 bg-gray-100 rounded-lg flex items-center justify-center mb-3">
+                        <img
+                          src={rec.image}
+                          alt={rec.description}
+                          className="w-16 h-16 object-cover rounded"
+                          onError={(e) => {
+                            e.currentTarget.style.display = "none";
+                            e.currentTarget.nextElementSibling!.style.display =
+                              "flex";
+                          }}
+                        />
+                        <div
+                          className="w-16 h-16 bg-gray-200 rounded flex items-center justify-center"
+                          style={{ display: "none" }}
+                        >
+                          <ShoppingCart className="w-8 h-8 text-gray-400" />
+                        </div>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-2">
+
+                      <h4 className="font-medium text-sm mb-1">{rec.title}</h4>
+                      <p className="text-xs text-gray-600 mb-2">
                         {rec.description}
                       </p>
-                      <p className="text-sm font-medium text-foreground">
-                        {rec.product}
-                      </p>
-                      <div className="flex items-center space-x-2 mt-1">
-                        <span className="text-lg font-bold text-primary">
-                          {rec.price}
-                        </span>
-                        {rec.originalPrice && (
-                          <span className="text-sm text-muted-foreground line-through">
-                            {rec.originalPrice}
+
+                      <div className="flex items-center justify-between">
+                        <div>
+                          <span className="text-lg font-bold text-walmart-blue">
+                            {rec.price}
                           </span>
-                        )}
+                          {rec.originalPrice && (
+                            <span className="text-xs text-gray-500 line-through ml-2">
+                              {rec.originalPrice}
+                            </span>
+                          )}
+                        </div>
+                        <Button
+                          size="sm"
+                          className="bg-walmart-blue hover:bg-walmart-blue/90"
+                        >
+                          Add
+                        </Button>
                       </div>
                     </div>
-                    <Button size="sm">
-                      <ShoppingCart className="w-4 h-4 mr-1" />
-                      Add to Cart
-                    </Button>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </CardContent>
             </Card>
 
             {/* Recipe Suggestions */}
-            <Card className="shadow-sm">
+            <Card>
               <CardHeader>
                 <CardTitle className="flex items-center text-lg">
-                  <ChefHat className="w-5 h-5 mr-2 text-primary" />
-                  What's for Dinner?
+                  <Gift className="w-5 h-5 mr-2 text-walmart-blue" />
+                  Meals made easy
                 </CardTitle>
                 <CardDescription>
                   Recipes tailored to your{" "}
@@ -321,9 +402,9 @@ const Dashboard = () => {
                   {recentRecipes.map((recipe) => (
                     <div
                       key={recipe.id}
-                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
                     >
-                      <div className="h-24 bg-muted flex items-center justify-center">
+                      <div className="h-24 bg-gray-100 flex items-center justify-center">
                         <img
                           src={recipe.image}
                           alt={recipe.name}
@@ -335,26 +416,29 @@ const Dashboard = () => {
                           }}
                         />
                         <div
-                          className="w-full h-full bg-primary/10 flex items-center justify-center"
+                          className="w-full h-full bg-gray-200 flex items-center justify-center"
                           style={{ display: "none" }}
                         >
-                          <ChefHat className="w-8 h-8 text-primary" />
+                          <Gift className="w-8 h-8 text-gray-400" />
                         </div>
                       </div>
                       <div className="p-3">
                         <h4 className="font-medium text-sm mb-2">
                           {recipe.name}
                         </h4>
-                        <div className="flex items-center justify-between text-xs text-muted-foreground mb-2">
+                        <div className="flex items-center justify-between text-xs text-gray-600 mb-2">
                           <span className="flex items-center">
                             <Clock className="w-3 h-3 mr-1" />
                             {recipe.time}
                           </span>
-                          <span>{recipe.difficulty}</span>
+                          <span className="flex items-center">
+                            <Star className="w-3 h-3 mr-1 text-yellow-500" />
+                            {recipe.rating}
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
-                          <span className="text-xs text-warning">
-                            {recipe.missingIngredients} ingredients needed
+                          <span className="text-xs text-orange-600">
+                            Need {recipe.missingIngredients} items
                           </span>
                           <Button
                             size="sm"
@@ -372,67 +456,54 @@ const Dashboard = () => {
             </Card>
           </div>
 
-          {/* Right Column - Quick Actions & Lists */}
+          {/* Right Sidebar */}
           <div className="space-y-6">
             {/* Quick Actions */}
-            <Card className="shadow-sm">
+            <Card>
               <CardHeader>
-                <CardTitle className="text-lg">Quick Actions</CardTitle>
+                <CardTitle className="text-base">Quick actions</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <Button className="w-full justify-start h-12" variant="outline">
-                  <ShoppingCart className="w-5 h-5 mr-3" />
-                  View Shopping Lists
+              <CardContent className="space-y-2">
+                <Button
+                  className="w-full justify-start bg-walmart-blue hover:bg-walmart-blue/90"
+                  size="sm"
+                >
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  My Lists
                 </Button>
-                <Button className="w-full justify-start h-12" variant="outline">
-                  <MapPin className="w-5 h-5 mr-3" />
-                  Plan Store Route
+                <Button
+                  className="w-full justify-start"
+                  variant="outline"
+                  size="sm"
+                >
+                  <MapPin className="w-4 h-4 mr-2" />
+                  Store Finder
                 </Button>
-                <Button className="w-full justify-start h-12" variant="outline">
-                  <Heart className="w-5 h-5 mr-3" />
-                  My Favorites
+                <Button
+                  className="w-full justify-start"
+                  variant="outline"
+                  size="sm"
+                >
+                  <Heart className="w-4 h-4 mr-2" />
+                  My Items
                 </Button>
-                <Button className="w-full justify-start h-12" variant="outline">
-                  <Settings className="w-5 h-5 mr-3" />
-                  Preferences
+                <Button
+                  className="w-full justify-start"
+                  variant="outline"
+                  size="sm"
+                >
+                  <Truck className="w-4 h-4 mr-2" />
+                  Track Orders
                 </Button>
               </CardContent>
             </Card>
 
-            {/* My Shopping Lists */}
-            <Card className="shadow-sm">
+            {/* My Pantry */}
+            <Card>
               <CardHeader>
-                <CardTitle className="text-lg">My Shopping Lists</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                {shoppingLists.map((list) => (
-                  <div
-                    key={list.id}
-                    className="flex items-center justify-between p-3 border rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
-                  >
-                    <div>
-                      <h4 className="font-medium text-sm">{list.name}</h4>
-                      <p className="text-xs text-muted-foreground">
-                        {list.items} items • {list.updated}
-                      </p>
-                    </div>
-                    <Badge variant="secondary" className="text-xs">
-                      {list.items}
-                    </Badge>
-                  </div>
-                ))}
-                <Button className="w-full mt-3" variant="outline">
-                  + Create New List
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* My Pantry Preview */}
-            <Card className="shadow-sm">
-              <CardHeader>
-                <CardTitle className="text-lg">My Pantry</CardTitle>
-                <CardDescription className="text-sm">
-                  Items you currently have at home
+                <CardTitle className="text-base">My Pantry</CardTitle>
+                <CardDescription className="text-xs">
+                  Items you have at home
                 </CardDescription>
               </CardHeader>
               <CardContent>
@@ -440,17 +511,45 @@ const Dashboard = () => {
                   {user.pantryItems.slice(0, 4).map((item, index) => (
                     <div
                       key={index}
-                      className="flex items-center justify-between py-1"
+                      className="flex items-center justify-between py-1 text-sm"
                     >
-                      <span className="text-sm">{item}</span>
+                      <span>{item}</span>
                       <Badge variant="outline" className="text-xs">
-                        In Stock
+                        ✓
                       </Badge>
                     </div>
                   ))}
                 </div>
                 <Button className="w-full mt-3" variant="outline" size="sm">
                   Manage Pantry
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Special Offers */}
+            <Card className="bg-walmart-yellow/10 border-walmart-yellow">
+              <CardHeader>
+                <CardTitle className="text-base flex items-center">
+                  <DollarSign className="w-4 h-4 mr-2 text-walmart-blue" />
+                  Today's deals
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-walmart-blue">30%</p>
+                    <p className="text-xs text-gray-600">Off organic produce</p>
+                  </div>
+                  <div className="text-center">
+                    <p className="text-2xl font-bold text-walmart-blue">$5</p>
+                    <p className="text-xs text-gray-600">Off orders over $35</p>
+                  </div>
+                </div>
+                <Button
+                  className="w-full mt-3 bg-walmart-blue hover:bg-walmart-blue/90"
+                  size="sm"
+                >
+                  Shop Deals
                 </Button>
               </CardContent>
             </Card>
