@@ -44,6 +44,9 @@ export default {
           yellow: "hsl(var(--walmart-yellow))",
           "light-blue": "hsl(var(--walmart-light-blue))",
         },
+        "dark-surface": "hsl(224 20% 8%)",
+        "dark-elevated": "hsl(215 25% 12%)",
+        "dark-accent": "hsl(215 25% 16%)",
         muted: {
           DEFAULT: "hsl(var(--muted))",
           foreground: "hsl(var(--muted-foreground))",
