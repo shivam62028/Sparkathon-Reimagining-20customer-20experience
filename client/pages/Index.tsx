@@ -102,7 +102,7 @@ const Dashboard = () => {
       title: "Rollback savings",
       description: "Tide PODS Laundry Detergent, 81 Count",
       price: "₹1,664",
-      originalPrice: "₹2,415",
+      originalPrice: "���2,415",
       badge: "Save ₹751",
       badgeColor: "bg-walmart-yellow text-black",
       image:
@@ -401,7 +401,7 @@ const Dashboard = () => {
       </header>
 
       {/* Search Bar Section */}
-      <div className="bg-walmart-light-blue border-b dark:bg-gray-800 dark:border-gray-700">
+      <div className="bg-walmart-light-blue border-b dark:bg-gradient-to-r dark:from-gray-900 dark:to-gray-800 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="relative max-w-2xl mx-auto">
             <div className="flex">
