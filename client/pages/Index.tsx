@@ -87,7 +87,7 @@ const Dashboard = () => {
       type: "running_low",
       title: "Reorder your usual",
       description: "Great Value Whole Milk, 1 Gallon",
-      price: "$3.42",
+      price: "₹285",
       badge: "Low Stock",
       badgeColor: "bg-red-100 text-red-800",
       image:
@@ -98,9 +98,9 @@ const Dashboard = () => {
       type: "deal",
       title: "Rollback savings",
       description: "Tide PODS Laundry Detergent, 81 Count",
-      price: "$19.97",
-      originalPrice: "$28.97",
-      badge: "Save $9",
+      price: "₹1,664",
+      originalPrice: "₹2,415",
+      badge: "Save ₹751",
       badgeColor: "bg-walmart-yellow text-black",
       image:
         "https://i5.walmartimages.com/asr/f0d8c8e4-3d8a-45a3-8b7e-9f5b3c2d1e0f.a2f4b8c3d5e6f7a8b9c0d1e2f3a4b5c6.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
@@ -110,7 +110,7 @@ const Dashboard = () => {
       type: "personalized",
       title: "Perfect for keto",
       description: "Organic Avocados, 4 count",
-      price: "$4.98",
+      price: "₹415",
       badge: "For You",
       badgeColor: "bg-walmart-blue text-white",
       image:
@@ -121,7 +121,7 @@ const Dashboard = () => {
       type: "trending",
       title: "Trending now",
       description: "Great Value Organic Eggs, 12 count",
-      price: "$3.97",
+      price: "₹331",
       badge: "Popular",
       badgeColor: "bg-green-100 text-green-800",
       image:
@@ -132,7 +132,7 @@ const Dashboard = () => {
       type: "deal",
       title: "Special offer",
       description: "Bananas, per lb",
-      price: "$0.58",
+      price: "₹48/kg",
       badge: "Fresh",
       badgeColor: "bg-walmart-yellow text-black",
       image:
@@ -143,7 +143,7 @@ const Dashboard = () => {
       type: "personalized",
       title: "Keto essential",
       description: "Coconut Oil, 14 oz",
-      price: "$7.98",
+      price: "₹665",
       badge: "Keto",
       badgeColor: "bg-walmart-blue text-white",
       image:
@@ -223,7 +223,7 @@ const Dashboard = () => {
       id: 1,
       name: "Rotisserie Chicken with Mashed Potatoes",
       description: "AI suggests this based on your keto preferences!",
-      price: "$8.98",
+      price: "₹749",
       readyTime: "Ready now",
       rating: 4.7,
       calories: "520 cal",
@@ -236,7 +236,7 @@ const Dashboard = () => {
       id: 2,
       name: "Grilled Salmon Bowl",
       description: "Fresh from our deli, perfect for dairy-free diet",
-      price: "$12.98",
+      price: "₹1,082",
       readyTime: "Ready in 15 mins",
       rating: 4.8,
       calories: "410 cal",
@@ -249,7 +249,7 @@ const Dashboard = () => {
       id: 3,
       name: "Mediterranean Meal Kit",
       description: "Ready-to-cook kit with pre-prepped ingredients",
-      price: "$15.98",
+      price: "₹1,332",
       readyTime: "Cook in 20 mins",
       rating: 4.6,
       calories: "380 cal",
@@ -262,7 +262,7 @@ const Dashboard = () => {
       id: 4,
       name: "Keto Caesar Salad",
       description: "Fresh greens with keto-friendly dressing",
-      price: "$6.98",
+      price: "₹582",
       readyTime: "Ready now",
       rating: 4.5,
       calories: "290 cal",
@@ -775,42 +775,42 @@ const Dashboard = () => {
                   {[
                     {
                       name: "Greek Yogurt",
-                      price: "$4.98",
+                      price: "₹415",
                       image:
                         "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=200&h=150&fit=crop&crop=center",
                       badge: "Protein",
                     },
                     {
                       name: "Fresh Spinach",
-                      price: "$2.48",
+                      price: "₹207",
                       image:
                         "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=200&h=150&fit=crop&crop=center",
                       badge: "Organic",
                     },
                     {
                       name: "Almond Butter",
-                      price: "$7.98",
+                      price: "₹665",
                       image:
                         "https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=200&h=150&fit=crop&crop=center",
                       badge: "Keto",
                     },
                     {
                       name: "Blueberries",
-                      price: "$3.98",
+                      price: "₹332",
                       image:
                         "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=200&h=150&fit=crop&crop=center",
                       badge: "Fresh",
                     },
                     {
                       name: "Olive Oil",
-                      price: "$8.97",
+                      price: "₹748",
                       image:
                         "https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=200&h=150&fit=crop&crop=center",
                       badge: "Premium",
                     },
                     {
                       name: "Quinoa",
-                      price: "$5.98",
+                      price: "₹498",
                       image:
                         "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=200&h=150&fit=crop&crop=center",
                       badge: "Superfood",
