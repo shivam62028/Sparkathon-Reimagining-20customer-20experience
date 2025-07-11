@@ -1100,8 +1100,10 @@ const Dashboard = () => {
                     <p className="text-xs text-gray-600">Off organic produce</p>
                   </div>
                   <div className="text-center">
-                    <p className="text-2xl font-bold text-walmart-blue">$5</p>
-                    <p className="text-xs text-gray-600">Off orders over $35</p>
+                    <p className="text-2xl font-bold text-walmart-blue">₹416</p>
+                    <p className="text-xs text-gray-600">
+                      Off orders over ₹2,915
+                    </p>
                   </div>
                 </div>
                 <Button
