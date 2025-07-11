@@ -10,9 +10,11 @@ import {
 import { useTheme } from "../components/ThemeProvider";
 
 const Profile = () => {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background to-muted/30">
-      <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
+      <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50 dark:bg-gray-900/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center space-x-4">
@@ -22,6 +24,22 @@ const Profile = () => {
               </Button>
               <h1 className="text-xl font-semibold">Profile & Preferences</h1>
             </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={toggleTheme}
+              title={
+                theme === "dark"
+                  ? "Switch to light mode"
+                  : "Switch to dark mode"
+              }
+            >
+              {theme === "dark" ? (
+                <Sun className="w-5 h-5" />
+              ) : (
+                <Moon className="w-5 h-5" />
+              )}
+            </Button>
           </div>
         </div>
       </header>
