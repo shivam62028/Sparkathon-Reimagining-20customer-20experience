@@ -260,15 +260,15 @@ const Dashboard = () => {
     },
     {
       id: 4,
-      name: "Keto Caesar Salad",
-      description: "Fresh greens with keto-friendly dressing",
-      price: "₹582",
+      name: "South Indian Thali",
+      description: "Complete meal with sambar, rasam, and vegetables",
+      price: "₹549",
       readyTime: "Ready now",
       rating: 4.5,
-      calories: "290 cal",
-      badges: ["Keto", "Fresh"],
+      calories: "380 cal",
+      badges: ["Traditional", "Complete Meal"],
       image:
-        "https://images.unsplash.com/photo-1546793665-c74683f339c1?w=300&h=200&fit=crop&crop=center",
+        "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=300&h=200&fit=crop&crop=center",
       type: "deli",
     },
   ];
