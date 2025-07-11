@@ -713,7 +713,7 @@ const Dashboard = () => {
                   {recentRecipes.map((recipe) => (
                     <div
                       key={recipe.id}
-                      className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow cursor-pointer"
+                      className="border rounded-lg overflow-hidden hover:shadow-md transition-all duration-300 cursor-pointer dark:bg-gray-800/60 dark:border-gray-600 dark:hover:bg-gray-700/60 dark:hover:shadow-xl dark:hover:shadow-walmart-blue/10"
                     >
                       <div className="h-24 bg-gray-100 flex items-center justify-center">
                         <img
