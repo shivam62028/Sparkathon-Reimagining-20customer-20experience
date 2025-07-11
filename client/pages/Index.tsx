@@ -496,7 +496,7 @@ const Dashboard = () => {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {/* Welcome Banner */}
-        <div className="bg-gradient-to-r from-walmart-blue to-blue-600 text-white rounded-lg p-6 mb-6">
+        <div className="bg-gradient-to-r from-walmart-blue to-blue-600 text-white rounded-lg p-6 mb-6 dark:from-walmart-blue dark:to-blue-500 dark:shadow-2xl dark:shadow-blue-500/20">
           <div className="flex items-center justify-between">
             <div>
               <h1 className="text-2xl font-bold mb-2">
