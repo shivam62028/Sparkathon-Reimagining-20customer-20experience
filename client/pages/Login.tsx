@@ -48,11 +48,11 @@ const Login = () => {
         {/* Walmart Logo */}
         <div className="mb-8">
           <div className="flex flex-col items-center space-y-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-walmart-blue to-blue-600 rounded-full flex items-center justify-center shadow-lg">
-              <Sparkles className="w-8 h-8 text-walmart-yellow" />
+            <div className="w-20 h-20 bg-gradient-to-br from-[#0071dc] to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+              <Sparkles className="w-10 h-10 text-[#ffc220]" />
             </div>
             <div className="text-center">
-              <h1 className="text-3xl font-bold text-walmart-blue dark:text-white">
+              <h1 className="text-4xl font-bold text-[#0071dc] dark:text-white">
                 Walmart
               </h1>
               <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
