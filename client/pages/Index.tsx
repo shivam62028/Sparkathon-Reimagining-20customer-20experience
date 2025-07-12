@@ -415,19 +415,39 @@ const Dashboard = () => {
             </div>
 
             <div className="flex flex-wrap gap-2 mt-4 justify-center">
-              <Button variant="outline" size="sm" className="h-8">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8"
+                onClick={() => navigate("/ready-meals")}
+              >
                 <Utensils className="w-4 h-4 mr-1" />
                 Ready Meals
               </Button>
-              <Button variant="outline" size="sm" className="h-8">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8"
+                onClick={() => navigate("/recipes")}
+              >
                 <ChefHat className="w-4 h-4 mr-1" />
                 Recipe Ideas
               </Button>
-              <Button variant="outline" size="sm" className="h-8">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8"
+                onClick={() => navigate("/restaurants")}
+              >
                 <MapPin className="w-4 h-4 mr-1" />
                 Restaurants
               </Button>
-              <Button variant="outline" size="sm" className="h-8">
+              <Button
+                variant="outline"
+                size="sm"
+                className="h-8"
+                onClick={() => navigate("/grocery")}
+              >
                 <ShoppingCart className="w-4 h-4 mr-1" />
                 Quick Reorder
               </Button>
