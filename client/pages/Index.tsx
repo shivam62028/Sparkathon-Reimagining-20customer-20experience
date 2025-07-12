@@ -506,6 +506,15 @@ const Dashboard = () => {
                 key={category.name}
                 variant="ghost"
                 className="flex flex-col items-center space-y-1 p-2 h-auto"
+                onClick={() => {
+                  if (category.name === "Grocery") navigate("/grocery");
+                  else if (category.name === "Ready Meals")
+                    navigate("/ready-meals");
+                  else if (category.name === "Restaurants")
+                    navigate("/restaurants");
+                  else if (category.name === "Health") navigate("/health");
+                  else if (category.name === "Home") navigate("/");
+                }}
               >
                 <category.icon className={`w-6 h-6 ${category.color}`} />
                 <span className="text-xs text-gray-600 dark:text-gray-300">
