@@ -1095,6 +1095,7 @@ const Dashboard = () => {
                 <Button
                   className="w-full justify-start bg-walmart-blue hover:bg-walmart-blue/90"
                   size="sm"
+                  onClick={() => navigate("/my-lists")}
                 >
                   <ShoppingCart className="w-4 h-4 mr-2" />
                   My Lists
@@ -1103,6 +1104,7 @@ const Dashboard = () => {
                   className="w-full justify-start"
                   variant="outline"
                   size="sm"
+                  onClick={() => navigate("/store-finder")}
                 >
                   <MapPin className="w-4 h-4 mr-2" />
                   Store Finder
@@ -1111,6 +1113,7 @@ const Dashboard = () => {
                   className="w-full justify-start"
                   variant="outline"
                   size="sm"
+                  onClick={() => navigate("/my-items")}
                 >
                   <Heart className="w-4 h-4 mr-2" />
                   My Items
@@ -1119,6 +1122,7 @@ const Dashboard = () => {
                   className="w-full justify-start"
                   variant="outline"
                   size="sm"
+                  onClick={() => navigate("/track-order")}
                 >
                   <Truck className="w-4 h-4 mr-2" />
                   Track Orders
