@@ -340,31 +340,24 @@ const Dashboard = () => {
       <header className="bg-walmart-blue text-white dark:bg-gradient-to-r dark:from-gray-900 dark:to-gray-800 dark:border-b dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo and Navigation */}
-            <div className="flex items-center space-x-6">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-walmart-yellow rounded-full flex items-center justify-center">
-                  <Sparkles className="w-5 h-5 text-walmart-blue" />
-                </div>
-                <span className="text-xl font-bold">Walmart</span>
+            {/* Logo (Left) */}
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-[#ffc220] rounded-full flex items-center justify-center">
+                <Sparkles className="w-5 h-5 text-[#0071dc]" />
               </div>
+              <span className="text-xl font-bold">Walmart</span>
+            </div>
 
-              <nav className="hidden md:flex items-center space-x-6">
-                <Button
-                  variant="ghost"
-                  className="text-white hover:bg-white/10"
-                >
-                  <Menu className="w-4 h-4 mr-2" />
-                  Departments
-                  <ChevronDown className="w-4 h-4 ml-1" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  className="text-white hover:bg-white/10"
-                >
-                  Services
-                </Button>
-              </nav>
+            {/* Search Bar (Center) - Hidden on mobile, shown on larger screens */}
+            <div className="hidden md:block flex-1 max-w-2xl mx-8">
+              <div className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Input
+                  type="text"
+                  placeholder="Search everything at Walmart online and in store"
+                  className="pl-10 h-10 bg-white text-gray-900 border border-gray-300 rounded-full"
+                />
+              </div>
             </div>
 
             {/* Right side actions */}
@@ -918,7 +911,7 @@ const Dashboard = () => {
                     },
                     {
                       name: "Blueberries",
-                      price: "���332",
+                      price: "₹332",
                       image:
                         "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=200&h=150&fit=crop&crop=center",
                       badge: "Fresh",
