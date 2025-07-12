@@ -1152,7 +1152,12 @@ const Dashboard = () => {
                     </div>
                   ))}
                 </div>
-                <Button className="w-full mt-3" variant="outline" size="sm">
+                <Button
+                  className="w-full mt-3"
+                  variant="outline"
+                  size="sm"
+                  onClick={() => navigate("/manage-pantry")}
+                >
                   Manage Pantry
                 </Button>
               </CardContent>
