@@ -179,14 +179,14 @@ const Login = () => {
             By continuing, you agree to Walmart's{" "}
             <a
               href="#"
-              className="text-walmart-blue dark:text-blue-400 hover:underline"
+              className="text-[#0071dc] dark:text-blue-400 hover:underline"
             >
               Terms of Use
             </a>{" "}
             and{" "}
             <a
               href="#"
-              className="text-walmart-blue dark:text-blue-400 hover:underline"
+              className="text-[#0071dc] dark:text-blue-400 hover:underline"
             >
               Privacy Policy
             </a>
