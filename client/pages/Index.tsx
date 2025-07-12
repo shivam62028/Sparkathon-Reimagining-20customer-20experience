@@ -361,36 +361,27 @@ const Dashboard = () => {
             </div>
 
             {/* Right side actions */}
-            <div className="flex items-center space-x-4">
+            {/* Cart and Account Icons (Right) */}
+            <div className="flex items-center space-x-3">
               <ThemeToggle
                 variant="ghost"
                 className="text-white hover:bg-white/10 p-2"
               />
               <Button
                 variant="ghost"
-                className="text-white hover:bg-white/10 p-2"
+                className="text-white hover:bg-white/10 p-2 relative"
               >
-                <Heart className="w-5 h-5" />
+                <ShoppingCart className="w-6 h-6" />
+                <span className="absolute -top-1 -right-1 bg-[#ffc220] text-[#0071dc] text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+                  3
+                </span>
               </Button>
               <Button
                 variant="ghost"
                 className="text-white hover:bg-white/10 p-2"
-              >
-                <Bell className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" className="text-white hover:bg-white/10">
-                <ShoppingCart className="w-5 h-5 mr-2" />
-                <span className="hidden sm:inline">Cart</span>
-              </Button>
-              <Button
-                variant="ghost"
-                className="text-white hover:bg-white/10"
                 onClick={() => navigate("/login")}
               >
-                <User className="w-5 h-5 mr-2" />
-                <span className="hidden sm:inline">
-                  Hi, {user.name.split(" ")[0]}
-                </span>
+                <User className="w-6 h-6" />
               </Button>
             </div>
           </div>
