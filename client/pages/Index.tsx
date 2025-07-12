@@ -535,6 +535,81 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        {/* Featured Categories */}
+        <div className="mb-8">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+            Shop by Category
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {[
+              {
+                name: "Electronics",
+                icon: "📱",
+                image:
+                  "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=200&h=150&fit=crop&crop=center",
+              },
+              {
+                name: "Clothing",
+                icon: "👕",
+                image:
+                  "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200&h=150&fit=crop&crop=center",
+              },
+              {
+                name: "Home & Garden",
+                icon: "🏠",
+                image:
+                  "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=200&h=150&fit=crop&crop=center",
+              },
+              {
+                name: "Sports",
+                icon: "⚽",
+                image:
+                  "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=200&h=150&fit=crop&crop=center",
+              },
+              {
+                name: "Beauty",
+                icon: "💄",
+                image:
+                  "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=200&h=150&fit=crop&crop=center",
+              },
+              {
+                name: "Pharmacy",
+                icon: "💊",
+                image:
+                  "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=200&h=150&fit=crop&crop=center",
+              },
+            ].map((category, index) => (
+              <div
+                key={index}
+                className="bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer border border-gray-200 dark:border-gray-700 overflow-hidden"
+              >
+                <div className="aspect-square relative">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                      e.currentTarget.nextElementSibling!.style.display =
+                        "flex";
+                    }}
+                  />
+                  <div
+                    className="w-full h-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-4xl"
+                    style={{ display: "none" }}
+                  >
+                    {category.icon}
+                  </div>
+                </div>
+                <div className="p-3 text-center">
+                  <h3 className="text-sm font-medium text-gray-900 dark:text-white">
+                    {category.name}
+                  </h3>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
         {/* Welcome Banner */}
         <div className="bg-gradient-to-r from-walmart-blue to-blue-600 text-white rounded-lg p-6 mb-6 dark:from-walmart-blue dark:to-blue-500 dark:shadow-2xl dark:shadow-blue-500/20">
           <div className="flex items-center justify-between">
@@ -843,7 +918,7 @@ const Dashboard = () => {
                     },
                     {
                       name: "Blueberries",
-                      price: "₹332",
+                      price: "���332",
                       image:
                         "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?w=200&h=150&fit=crop&crop=center",
                       badge: "Fresh",
