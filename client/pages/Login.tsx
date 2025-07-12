@@ -165,7 +165,7 @@ const Login = () => {
             <Button
               type="button"
               variant="outline"
-              className="w-full h-12 border-2 border-walmart-blue text-walmart-blue hover:bg-walmart-blue hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white font-semibold text-base rounded-md transition-all duration-200"
+              className="w-full h-12 border-2 border-[#0071dc] text-[#0071dc] hover:bg-[#0071dc] hover:text-white dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-600 dark:hover:text-white font-semibold text-base rounded-md transition-all duration-200"
               onClick={() => console.log("Create account clicked")}
             >
               Create your account
