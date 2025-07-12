@@ -389,7 +389,11 @@ const Dashboard = () => {
                 <ShoppingCart className="w-5 h-5 mr-2" />
                 <span className="hidden sm:inline">Cart</span>
               </Button>
-              <Button variant="ghost" className="text-white hover:bg-white/10">
+              <Button
+                variant="ghost"
+                className="text-white hover:bg-white/10"
+                onClick={() => navigate("/login")}
+              >
                 <User className="w-5 h-5 mr-2" />
                 <span className="hidden sm:inline">
                   Hi, {user.name.split(" ")[0]}
