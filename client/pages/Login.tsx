@@ -142,7 +142,7 @@ const Login = () => {
             <div className="text-center">
               <button
                 type="button"
-                className="text-sm text-walmart-blue hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors duration-200"
+                className="text-sm text-[#0071dc] hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 font-medium transition-colors duration-200"
                 onClick={() => console.log("Forgot password clicked")}
               >
                 Forgot your password?
