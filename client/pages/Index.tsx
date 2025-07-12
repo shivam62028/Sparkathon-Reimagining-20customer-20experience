@@ -475,6 +475,40 @@ const Dashboard = () => {
         </div>
       </div>
 
+      {/* Delivery Location Section */}
+      <div className="bg-walmart-yellow/10 border-b dark:bg-gray-700 dark:border-gray-600">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          <div className="text-center">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+              Where should we deliver your items?
+            </h2>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 max-w-md mx-auto">
+              <div className="flex items-center space-x-2 bg-white dark:bg-gray-800 rounded-lg px-4 py-3 border border-gray-200 dark:border-gray-600 shadow-sm min-w-0 flex-1">
+                <MapPin className="w-5 h-5 text-walmart-blue flex-shrink-0" />
+                <select className="bg-transparent border-none outline-none text-gray-700 dark:text-gray-300 text-sm flex-1 min-w-0">
+                  <option value="">Select location</option>
+                  <option value="110001">110001 - New Delhi</option>
+                  <option value="400001">400001 - Mumbai</option>
+                  <option value="560001">560001 - Bangalore</option>
+                  <option value="600001">600001 - Chennai</option>
+                  <option value="700001">700001 - Kolkata</option>
+                  <option value="500001">500001 - Hyderabad</option>
+                  <option value="411001">411001 - Pune</option>
+                  <option value="380001">380001 - Ahmedabad</option>
+                </select>
+              </div>
+              <Button className="bg-walmart-blue hover:bg-blue-700 text-white px-6 py-3 whitespace-nowrap">
+                Set Location
+              </Button>
+            </div>
+            <p className="text-sm text-gray-600 dark:text-gray-400 mt-3">
+              We'll show you items available in your area and estimated delivery
+              times
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Categories */}
       <div className="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -486,7 +520,9 @@ const Dashboard = () => {
                 className="flex flex-col items-center space-y-1 p-2 h-auto"
               >
                 <category.icon className={`w-6 h-6 ${category.color}`} />
-                <span className="text-xs text-gray-600">{category.name}</span>
+                <span className="text-xs text-gray-600 dark:text-gray-300">
+                  {category.name}
+                </span>
               </Button>
             ))}
           </div>
@@ -1077,7 +1113,7 @@ const Dashboard = () => {
                       <div>
                         <h4 className="font-medium text-sm">{list.name}</h4>
                         <p className="text-xs text-gray-600">
-                          {list.items} items �� Last: {list.lastItem}
+                          {list.items} items • Last: {list.lastItem}
                         </p>
                       </div>
                       <Badge variant="outline" className="text-xs">
